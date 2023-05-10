@@ -1,0 +1,43 @@
+.homeP {
+  position: relative;
+  flex-grow: 1;
+}
+
+.titleP {
+  font-weight: 900;
+  font-size: 119px;
+  line-height: 145px;
+  text-transform: uppercase;
+  color: var(--dark-sea);
+  text-align: center;
+}
+
+.productP {
+  position: relative;
+  padding-left: 42px;
+  display: flex;
+  align-items: stretch;
+  margin-top: 9px;
+}
+
+.subtitleP {
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.headP {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: var(--light);
+  max-width: 500px;
+  margin: 10px 0 24px 0;
+}
+
+.imageP {
+  position: relative;
+  flex-grow: 1;
+  height: 250px;
+}

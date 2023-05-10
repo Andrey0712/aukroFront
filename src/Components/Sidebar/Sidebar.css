@@ -9,6 +9,8 @@
 .title {
   font-weight: 600;
   line-height: 20px;
+  font-size: 30px;
+  color: var(--dark-sea);
 }
 
 .menu {
