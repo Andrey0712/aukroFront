@@ -11,25 +11,25 @@ import AVATAR from "../../images/avatar.jpg";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="headerHead">
       <div className="logoheder">
         <Link to={ROUTES.HOUME}>
           <img className="logoImg" src={LOGO} alt="Auction" />
         </Link>
       </div>
 
-      <div className="info">
-        <div className="user">
+      <div className="infoheder">
+        <div className="userheder">
           <div
-            className="avatar"
+            className="avatarheder"
             style={{ backgroundImage: `url(${AVATAR})` }}
           />
-          <div className="username">guest</div>
+          <div className="usernameheder">guest</div>
         </div>
 
-        <form className="form">
-          <div className="icon">
-            <svg className="icon">
+        <form className="formheder">
+          <div className="iconheder">
+            <svg className="iconheder">
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`} />
             </svg>
           </div>

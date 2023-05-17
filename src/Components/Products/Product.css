@@ -1,0 +1,135 @@
+.productPr {
+  display: flex;
+  flex-grow: 1;
+  max-width: calc(100% - 324px);
+  padding: 24px;
+  column-gap: 32px;
+  color: var(--light);
+}
+
+.infoPr {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagesPr {
+  display: flex;
+  gap: 20px;
+}
+
+.currentPr {
+  width: 375px;
+  height: 375px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+.images-listPr {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.imagePr {
+  width: 90px;
+  height: 90px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.titlePr {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.pricePr {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 10px 0 20px 0;
+}
+
+.colorPr,
+.sizesPr {
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.sizesPr {
+  margin: 16px 0;
+}
+
+.colorPr span,
+.sizesPr span {
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--dark-sea);
+}
+
+.listPr {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.sizePr {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.sizePr:hover,
+.sizePr.active {
+  background: var(--violet);
+}
+
+.descriptionPr {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--grey);
+}
+
+.actionsPr {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.favouritePr {
+  background: var(--dark-sea);
+  border-radius: 6px;
+}
+
+.favouritePr:hover {
+  background: #7a8690;
+}
+
+.bottomPr {
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--dark-sea);
+  margin-top: auto;
+}
+
+.addPr:disabled {
+  cursor: not-allowed;
+  background: var(--bg);
+}

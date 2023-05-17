@@ -16,6 +16,7 @@ export const getCategories = createAsyncThunk(
   }
 );
 
+//initState+promis
 const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
