@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import { addItemToCart } from "../../features/user/userSlice";
+import { useDispatch } from "react-redux";
 
-const Product = ({ title, price, images, description }) => {
-  const currentImage = images[0];
+const Product = (item) => {
+  const { title, price, images, description } = item;
+  //const currentImage = images[0];
+  const dispatch = useDispatch();
+
+  const [currentImage, setCurrentImages] = useState();
+
+  useEffect(() => {
+    if (!images.length) return;
+    setCurrentImages(images[0]);
+  }, [images]);
   //console.log({ title });
+  const addToCart = () => {
+    dispatch(addItemToCart(item));
+  };
+
   return (
     <section className="productPr">
       <div className="imagesPr">
@@ -19,7 +34,7 @@ const Product = ({ title, price, images, description }) => {
               key={i}
               className="imagePr"
               style={{ backgroundImage: `url(${image})` }}
-              onClick={() => {}}
+              onClick={() => setCurrentImages(image)}
             />
           ))}
         </div>
@@ -50,7 +65,9 @@ const Product = ({ title, price, images, description }) => {
         <p className="descriptionPr">{description}</p>
 
         <div className="actionsPr">
-          <button className="addPr">Add to cart</button>
+          <button onClick={addToCart} className="addPr">
+            Add to cart
+          </button>
           <button className="favouritePr">Add to favourite</button>
         </div>
 

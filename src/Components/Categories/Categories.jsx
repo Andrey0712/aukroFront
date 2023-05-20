@@ -4,6 +4,7 @@ import "./Categories.css";
 
 const Categories = ({ title, categories = [], amount }) => {
   const list = categories.filter((_, i) => i < amount);
+
   return (
     <section className="sectionCategories">
       <h2>{title}</h2>

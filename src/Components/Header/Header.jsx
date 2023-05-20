@@ -8,8 +8,23 @@ import { ROUTES } from "../../utils/routes";
 
 import LOGO from "../../images/Auction.svg";
 import AVATAR from "../../images/avatar.jpg";
+import { toggleForm } from "../../features/user/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(({ user }) => user);
+
+  const [values, setValues] = useState({ name: "Goes", avatar: AVATAR });
+
+  useEffect(() => {
+    if (!currentUser) return;
+    setValues(currentUser);
+  }, [currentUser]);
+
+  const handleClick = () => {
+    if (!currentUser) dispatch(toggleForm(true));
+    //else navigate(ROUTES.PROFILE);
+  };
   return (
     <div className="headerHead">
       <div className="logoheder">
@@ -19,12 +34,12 @@ const Header = () => {
       </div>
 
       <div className="infoheder">
-        <div className="userheder">
+        <div className="userheder" onClick={handleClick}>
           <div
             className="avatarheder"
-            style={{ backgroundImage: `url(${AVATAR})` }}
+            style={{ backgroundImage: `url(${values.avatar})` }}
           />
-          <div className="usernameheder">guest</div>
+          <div className="usernameheder">{values.name}</div>
         </div>
 
         <form className="formheder">
