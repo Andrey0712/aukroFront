@@ -131,7 +131,7 @@
   line-height: 16px;
 }
 
-.box {
+.boxheder {
   z-index: 9;
   top: 120%;
   position: absolute;
@@ -147,11 +147,11 @@
   border-radius: 8px;
 }
 
-.box::-webkit-scrollbar {
+.boxheder::-webkit-scrollbar {
   display: none;
 }
 
-.item {
+.itemheder {
   font-size: 13px;
   color: var(--grey);
   display: flex;
@@ -159,11 +159,11 @@
   column-gap: 16px;
 }
 
-.item:hover {
+.itemheder:hover {
   color: var(--light);
 }
 
-.image {
+.imageheder {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

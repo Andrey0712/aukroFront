@@ -9,12 +9,18 @@ import { ROUTES } from "../../utils/routes";
 import LOGO from "../../images/Auction.svg";
 import AVATAR from "../../images/avatar.jpg";
 import { toggleForm } from "../../features/user/userSlice";
+import { useGetProductsQuery } from "../../features/api/apiSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { currentUser } = useSelector(({ user }) => user);
 
-  const [values, setValues] = useState({ name: "Goes", avatar: AVATAR });
+  const [searchValue, setSearchValue] = useState("");
+
+  const { data, isLoading } = useGetProductsQuery({ title: searchValue });
+  //console.log(data);
+  const [values, setValues] = useState({ name: "NoName", avatar: AVATAR });
 
   useEffect(() => {
     if (!currentUser) return;
@@ -23,8 +29,13 @@ const Header = () => {
 
   const handleClick = () => {
     if (!currentUser) dispatch(toggleForm(true));
-    //else navigate(ROUTES.PROFILE);
+    else navigate(ROUTES.PROFILE);
   };
+
+  const handleSearch = ({ target: { value } }) => {
+    setSearchValue(value);
+  };
+
   return (
     <div className="headerHead">
       <div className="logoheder">
@@ -54,10 +65,35 @@ const Header = () => {
               name="search"
               placeholder="Search for anyting..."
               autoComplete="off"
-              onChange=""
-              value=""
+              onChange={handleSearch}
+              value={searchValue}
             />
           </div>
+
+          {searchValue && (
+            <div className="boxheder">
+              {isLoading
+                ? "Loading"
+                : !data.length
+                ? "No results"
+                : data.map(({ title, images, id }) => {
+                    return (
+                      <Link
+                        key={id}
+                        onClick={() => setSearchValue("")}
+                        className="itemheder"
+                        to={`/products/${id}`}
+                      >
+                        <div
+                          className="imageheder"
+                          style={{ backgroundImage: `url(${images[0]})` }}
+                        />
+                        <div className="titleheder">{title}</div>
+                      </Link>
+                    );
+                  })}
+            </div>
+          )}
         </form>
 
         <div className="account">

@@ -1,15 +1,15 @@
-.profile {
+.profileProfile {
   flex-grow: 1;
   padding: 24px;
 }
 
-.form {
+.formProfile {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
 
-.group {
+.groupProfile {
   width: 100%;
   background: #212123;
   border-radius: 8px;

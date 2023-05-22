@@ -19,6 +19,7 @@
   flex-direction: column;
   row-gap: 12px;
   overflow-y: hidden;
+  /* overflow-y: auto; */
 }
 .menuScr {
   margin-top: 32px;
