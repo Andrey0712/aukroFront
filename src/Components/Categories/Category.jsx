@@ -4,9 +4,11 @@ import { useGetProductsQuery } from "../../features/api/apiSlice";
 import "./Categories.css";
 import Products from "../Products/Products";
 import { useSelector } from "react-redux";
+
 const Category = () => {
   const { id } = useParams();
   const { list } = useSelector(({ categories }) => categories);
+
   const defaultValues = {
     title: "",
     price_min: "",
@@ -14,17 +16,28 @@ const Category = () => {
   };
   const defaultParams = {
     categoryId: id,
+    limit: 5, // amount
+    offset: 0, // старт отсчета
     ...defaultValues,
   };
 
   const [cat, setCat] = useState();
+  const [isEnd, setEnd] = useState(false); //скрівать кнопку если !products.length
   const [items, setItems] = useState([]);
   const [values, setValues] = useState(defaultValues);
   const [params, setParams] = useState(defaultParams);
 
+  console.log(params);
+  const { data, isLoading, isSuccess } = useGetProductsQuery(params);
+  console.log(data);
+
   useEffect(() => {
     if (!id) return;
 
+    //при смене категории дефолтніе параметры
+    setValues(defaultValues);
+    setItems([]);
+    setEnd(false);
     setParams({ ...defaultParams, categoryId: id });
   }, [id]);
 
@@ -33,7 +46,16 @@ const Category = () => {
     const category = list.find((item) => item.id === id * 1);
 
     setCat(category);
-  });
+  }, [list, id]);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (!data.length) return setEnd(true);
+    // const products = Object.values(data);
+    // if (!products.length) return;
+    setItems((_items) => [..._items, ...data]);
+  }, [data, isLoading]);
 
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
@@ -41,12 +63,13 @@ const Category = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setParams({ ...params, ...values });
+    setItems([]);
+    setEnd(false);
+    setParams({ ...defaultParams, ...values });
   };
 
   //const { data } = useGetProductsQuery({ categoryId: id });
-  const { data, isLoading, isSuccess } = useGetProductsQuery(params);
-  console.log(data);
+
   return (
     <section className="wrapperCategories">
       <h2 className="title">{cat?.name}</h2>
@@ -86,7 +109,7 @@ const Category = () => {
 
       {isLoading ? (
         <div className="preloader">Loading...</div>
-      ) : !isSuccess || !data.length ? (
+      ) : !isSuccess || !items.length ? (
         <div className="backCategories">
           <span>No rezalt</span>
           <button onClick={""}>RESET</button>
@@ -94,10 +117,21 @@ const Category = () => {
       ) : (
         <Products
           title=""
-          products={data}
+          products={items}
           style={{ padding: 0 }}
-          amount={data.length}
+          amount={items.length}
         />
+      )}
+      {!isEnd && (
+        <div className="moreCategories">
+          <button
+            onClick={() =>
+              setParams({ ...params, offset: params.offset + params.limit })
+            }
+          >
+            See more
+          </button>
+        </div>
       )}
     </section>
   );
