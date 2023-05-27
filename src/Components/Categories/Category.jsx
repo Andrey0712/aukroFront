@@ -68,6 +68,11 @@ const Category = () => {
     setParams({ ...defaultParams, ...values });
   };
 
+  const handleReset = () => {
+    setValues(defaultValues);
+    setParams(defaultParams);
+    setEnd(false);
+  };
   //const { data } = useGetProductsQuery({ categoryId: id });
 
   return (
@@ -112,7 +117,7 @@ const Category = () => {
       ) : !isSuccess || !items.length ? (
         <div className="backCategories">
           <span>No rezalt</span>
-          <button onClick={""}>RESET</button>
+          <button onClick={handleReset}>Reset</button>
         </div>
       ) : (
         <Products

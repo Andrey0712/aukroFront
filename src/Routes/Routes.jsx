@@ -5,6 +5,7 @@ import { ROUTES } from "../utils/routes";
 import SingleProducts from "../Components/Products/SingleProducts";
 import Profile from "../Components/Profile/Profile";
 import SingleCategory from "../Components/Categories/SingleCategory";
+import Cart from "../Components/Cart/Cart";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.PRODUCT} element={<SingleProducts />} />
       <Route path={ROUTES.PROFILE} element={<Profile />} />
       <Route path={ROUTES.CATEGORY} element={<SingleCategory />} />
+      <Route path={ROUTES.CART} element={<Cart />} />
     </Routes>
   );
 };

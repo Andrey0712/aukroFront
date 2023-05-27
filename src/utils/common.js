@@ -11,3 +11,5 @@ export const buildUrl = (url, params) => {
 
   return urlWithParams;
 };
+//принимаем масив и с помощью редюсера коллбек функция складівает предидущее и текущее значение
+export const sumBy = (arr) => arr.reduce((prev, cur) => prev + cur, 0);

@@ -77,9 +77,9 @@ const userSlice = createSlice({
 
       state.cart = newCart;
     },
-    // removeItemFromCart: (state, { payload }) => {
-    //   state.cart = state.cart.filter(({ id }) => id !== payload);
-    // },
+    removeItemFromCart: (state, { payload }) => {
+      state.cart = state.cart.filter(({ id }) => id !== payload);
+    },
     //для смены в heder формы userheder
     toggleForm: (state, { payload }) => {
       state.showForm = payload;
