@@ -1,5 +1,5 @@
 body {
-  /* background: var(--bg); */
+  background: var(--bg);
   font-size: 16px;
   line-height: 16px;
   font-family: Montserrat, Roboto, sans-serif;
@@ -11,8 +11,9 @@ body {
   padding-bottom: 20px;
 }
 
-html[data-theme="dark"] {
+/* html[data-theme="dark"] {
   background: var(--bg);
+
   /* font-size: 16px;
   line-height: 16px;
   font-family: Montserrat, Roboto, sans-serif;
@@ -21,30 +22,14 @@ html[data-theme="dark"] {
   overflow-x: hidden;
   color: #fff;
   font-weight: 500;
-  padding-bottom: 20px; */
-}
+  padding-bottom: 20px; 
+}*/
 
-html[data-theme="light"] {
+/* html[data-theme="light"] {
   background: var(--white);
-  /* font-size: 16px;
-  line-height: 16px;
-  font-family: Montserrat, Roboto, sans-serif;
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  color: #fff;
-  font-weight: 500;
-  padding-bottom: 20px; */
-}
-/* body.light {
-  --background-color: var(--white);
-  --text-color: var(--bg);
-}
 
-body.dark {
-  --background-color: var(--bg);
-  --text-color: var(--white);
-} */
+ 
+}  */
 
 h1,
 h2,

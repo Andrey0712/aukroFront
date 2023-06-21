@@ -6,13 +6,13 @@ import LOGO from "../../images/Auction.svg";
 
 const Footer = () => {
   return (
-    <section className="footer">
+    <section className="footerFooter">
       <div className="logo">
         <Link to={ROUTES.HOUME}>
           <img src={LOGO} alt="AUCTION" />
         </Link>
       </div>
-      <div className="rigrts">Всі права захищено</div>
+      <div className="rights">Всі права захищено</div>
 
       <div className="socials">
         <a href="https://instagram.com" target="_blank" rel="noreferrer">

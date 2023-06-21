@@ -8,8 +8,8 @@ import { ROUTES } from "../../utils/routes";
 
 import LOGO from "../../images/Auction.svg";
 import AVATAR from "../../images/avatar.jpg";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+// import Button from "react-bootstrap/Button";
+// import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 import { toggleForm } from "../../features/user/userSlice";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
@@ -111,23 +111,23 @@ const Header = () => {
           )}
         </form>
 
-        <ButtonGroup aria-label="Theme toggle">
+        {/* <ButtonGroup aria-label="Theme toggle">
           <Button variant="secondary" onClick={handleLightThemeClick}>
             Light
           </Button>
           <Button variant="secondary" onClick={handleDarkThemeClick}>
             Dark
           </Button>
-        </ButtonGroup>
+        </ButtonGroup> */}
 
-        {/* <div class="btn-group me-2" role="group" aria-label="Theme toggle">
-          <button className="button" onClick={handleLightThemeClick}>
+        <div className="btn-group" role="group" aria-label="Theme toggle">
+          <button className="buttonTheme" onClick={handleLightThemeClick}>
             Light
           </button>
-          <button className="button" onClick={handleDarkThemeClick}>
+          <button className="buttonTheme" onClick={handleDarkThemeClick}>
             Dark
           </button>
-        </div> */}
+        </div>
 
         <div className="account">
           <Link to={ROUTES.HOUME} className="favourites">
