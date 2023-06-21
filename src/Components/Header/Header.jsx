@@ -8,8 +8,13 @@ import { ROUTES } from "../../utils/routes";
 
 import LOGO from "../../images/Auction.svg";
 import AVATAR from "../../images/avatar.jpg";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+
 import { toggleForm } from "../../features/user/userSlice";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
+
+import { useTheme } from "../hooks/use-theme";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -19,6 +24,7 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const { data, isLoading } = useGetProductsQuery({ title: searchValue });
+
   //console.log(data);
   const [values, setValues] = useState({ name: "NoName", avatar: AVATAR });
 
@@ -34,6 +40,15 @@ const Header = () => {
 
   const handleSearch = ({ target: { value } }) => {
     setSearchValue(value);
+  };
+
+  const { theme, setTheme } = useTheme();
+
+  const handleLightThemeClick = () => {
+    setTheme("light");
+  };
+  const handleDarkThemeClick = () => {
+    setTheme("dark");
   };
 
   return (
@@ -63,7 +78,7 @@ const Header = () => {
             <input
               type="search"
               name="search"
-              placeholder="Search for anyting..."
+              placeholder="Search by name..."
               autoComplete="off"
               onChange={handleSearch}
               value={searchValue}
@@ -95,6 +110,24 @@ const Header = () => {
             </div>
           )}
         </form>
+
+        <ButtonGroup aria-label="Theme toggle">
+          <Button variant="secondary" onClick={handleLightThemeClick}>
+            Light
+          </Button>
+          <Button variant="secondary" onClick={handleDarkThemeClick}>
+            Dark
+          </Button>
+        </ButtonGroup>
+
+        {/* <div class="btn-group me-2" role="group" aria-label="Theme toggle">
+          <button className="button" onClick={handleLightThemeClick}>
+            Light
+          </button>
+          <button className="button" onClick={handleDarkThemeClick}>
+            Dark
+          </button>
+        </div> */}
 
         <div className="account">
           <Link to={ROUTES.HOUME} className="favourites">

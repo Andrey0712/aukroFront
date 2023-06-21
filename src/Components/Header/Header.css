@@ -171,3 +171,74 @@
   height: 50px;
   width: 50px;
 }
+
+/* #darkMode {
+  background: transparent
+    url("https://github.com/alekspopovic/DarkMode/blob/master/src/moon.png")
+    no-repeat center;
+  background-size: 30px 30px;
+  width: 45px;
+  height: 45px;
+  filter: grayscale(100%);
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#darkMode:hover,
+#darkMode:focus {
+  filter: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  filter: none !important;
+  background-color: black;
+} */
+
+/* .theme-switch {
+  --background: #fff;
+  --text: #333;
+  color: var(--text);
+  width: 50px;
+  height: 22px;
+  background: var(--highlight);
+  border-radius: 50px;
+  position: relative;
+
+  .switch {
+    background: white;
+    width: 18px;
+    height: 18px;
+    background: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    transition: 0.5s all ease;
+  }
+}
+
+.theme-switch {
+  --background: #fff;
+  --text: #333;
+  color: var(--text);
+  width: 70px;
+  height: 30px;
+  background: var(--highlight);
+  border-radius: 50px;
+  position: relative;
+
+  .switch {
+    background: white;
+    width: 24px;
+    height: 24px;
+    background: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+  }
+} */
