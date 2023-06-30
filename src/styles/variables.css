@@ -26,12 +26,12 @@ html[data-theme="dark"] {
 html[data-theme="light"] {
   --white: #fff;
   --bg: #616e74;
-  --dark: #f6f6f7;
+  --dark: #aeaeb3;
   --dark-sea: #212123;
-  --grey: #b8b8b8;
+  --grey: #545252;
 
   --violet: #6c3eb8;
-  --violet-dark: #8b57c6;
+  --violet-dark: #5c14af;
   --light: #191919;
   --sea: #576067;
 }

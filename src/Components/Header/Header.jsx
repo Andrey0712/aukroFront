@@ -41,7 +41,7 @@ const Header = () => {
   const handleSearch = ({ target: { value } }) => {
     setSearchValue(value);
   };
-
+  //зміна теми використовуючи хук useTheme
   const { theme, setTheme } = useTheme();
 
   const handleLightThemeClick = () => {

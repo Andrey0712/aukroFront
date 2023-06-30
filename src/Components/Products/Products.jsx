@@ -1,6 +1,7 @@
 import React from "react";
 import "./Products.css";
 import { Link } from "react-router-dom";
+//import Lots from "../../images/Lots.svg";
 
 const Products = ({ title, style = {}, products = [], amount }) => {
   const list = products.filter((_, i) => i < amount);
@@ -8,6 +9,9 @@ const Products = ({ title, style = {}, products = [], amount }) => {
   return (
     <section className="productsPR" style={style}>
       {title && <h2>{title}</h2>}
+      {/* <div className="logoheder">
+        <img className="logoImg" src={Lots} alt={title} />
+      </div> */}
 
       <div className="listPR">
         {list.map(({ id, images, title, category: { name: cat }, price }) => (

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AppRoutes from "../../Routes/Routes";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+// import NoPage from "../NoPage/NoPage";
 import Sidebar from "../Sidebar/Sidebar";
 import { useDispatch } from "react-redux";
 import { getCategories } from "../../features/categories/categoriesSlice";
@@ -17,6 +18,7 @@ const App = () => {
 
   return (
     <div className="app">
+      {/* <NoPage /> */}
       <Header />
       <UserForm />
       <div className="container">
