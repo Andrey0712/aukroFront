@@ -45,6 +45,10 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             onChange={handleChange}
             required
           />
+          {/* <label for="email" class="form__label">
+            {" "}
+            Email{" "}
+          </label> */}
         </div>
 
         <div className="group">

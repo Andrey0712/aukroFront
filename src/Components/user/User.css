@@ -28,6 +28,7 @@
 }
 
 .form {
+  /* position: relative; */
   margin-top: 24px;
   display: flex;
   width: 100%;
@@ -36,6 +37,7 @@
 }
 
 .group input {
+  /* position: absolute; */
   width: 100%;
   background: #212123;
   border-radius: 8px;
@@ -76,3 +78,31 @@
 .link:hover {
   color: var(--light);
 }
+
+/* .group input:hover {
+  border-color: #adffff;
+}
+
+.group input:focus {
+  border-color: #18ffff;
+}
+
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  -webkit-transition: top 200ms ease-in, left 200ms ease-in,
+    font-size 200ms ease-in;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #060b23;
+}
+
+.group input:focus ~ .form__label,
+.group input:not(:placeholder-shown).group input:not(:focus) ~ .form__label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+} */

@@ -17,16 +17,19 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="app">
-      {/* <NoPage /> */}
-      <Header />
-      <UserForm />
-      <div className="container">
-        <Sidebar />
-        <AppRoutes />
-      </div>
+    <div className="container">
+      <div className="app">
+        {/* <NoPage /> */}
+        <Header />
+        <UserForm />
+        {/* <AppRoutes /> */}
+        <div className="container">
+          <Sidebar />
+          <AppRoutes />
+        </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };

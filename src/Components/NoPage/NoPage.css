@@ -10,8 +10,9 @@
   width: 100%;
 }
 
+/* @import "../../images/dribbble_1.gif"; */
 .four_zero_four_bg {
-  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  background-image: url("../../images/dribbble_1.gif");
   height: 320px;
   background-position: center;
 }

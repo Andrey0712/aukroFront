@@ -1,5 +1,6 @@
 import React from "react";
 import "./NoPage.css";
+//import Page404 from "../../images/dribbble_1.gif";
 
 const NoPage = () => {
   return (
