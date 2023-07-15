@@ -1,12 +1,17 @@
 .headerHead {
+  position: sticky;
+  top: 0;
   width: 100%;
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   padding: 20px 20px 10px 20px;
+  z-index: 50;
+  /* background-color: #252627; */
 }
 
 .logoheder {
-  width: 304px;
+  width: 204px;
   height: auto;
 }
 .logoImg {
@@ -80,6 +85,12 @@
   width: 100%;
 }
 
+@media (max-width: 900px) {
+  .formheder {
+    display: none;
+  }
+}
+
 .account {
   display: flex;
   align-items: center;
@@ -100,12 +111,24 @@
   fill: none;
 }
 
+.icon-search {
+  fill: var(--grey);
+}
+@media (min-width: 900px) {
+  .icon-search {
+    display: none;
+  }
+}
+
 .icon-cart {
   fill: var(--grey);
 }
 
 .icon-fav:hover {
   stroke: var(--white);
+}
+.icon-search:hover {
+  fill: var(--white);
 }
 
 .icon-cart:hover {

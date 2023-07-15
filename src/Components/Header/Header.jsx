@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Header.css";
 
@@ -43,6 +44,7 @@ const Header = () => {
   };
   //зміна теми використовуючи хук useTheme
   const { theme, setTheme } = useTheme();
+  console.log({ theme });
 
   const handleLightThemeClick = () => {
     setTheme("light");
@@ -111,25 +113,46 @@ const Header = () => {
           )}
         </form>
 
-        {/* <ButtonGroup aria-label="Theme toggle">
-          <Button variant="secondary" onClick={handleLightThemeClick}>
-            Light
-          </Button>
-          <Button variant="secondary" onClick={handleDarkThemeClick}>
-            Dark
-          </Button>
-        </ButtonGroup> */}
-
-        <div className="btn-group" role="group" aria-label="Theme toggle">
-          <button className="buttonTheme" onClick={handleLightThemeClick}>
-            Light
-          </button>
+        {/* <div className="btn-group" role="group" aria-label="Theme toggle">
           <button className="buttonTheme" onClick={handleDarkThemeClick}>
             Dark
           </button>
-        </div>
+          <button className="buttonTheme" onClick={handleLightThemeClick}>
+            Light
+          </button>
+        </div> */}
+
+        {/* <div className="btn-group" role="group" aria-label="Theme toggle"> */}
+        {theme === "light" ? (
+          <button className="buttonTheme" onClick={handleDarkThemeClick}>
+            Dark
+          </button>
+        ) : (
+          <button className="buttonTheme" onClick={handleLightThemeClick}>
+            Light
+          </button>
+        )}
+        {/* </div> */}
 
         <div className="account">
+          {/* <div>
+            <a className="favourites">
+              <FontAwesomeIcon icon="fa-brands fa-sistrix" fade size="sm" />
+            </a>
+          </div> */}
+
+          {/* <Link to={ROUTES.HOUME} className="favourites">
+            <svg className={["icon-fav"]}>
+              <use xlinkHref={`${process.env.PUBLIC_URL}/sistrix.svg`} />
+            </svg>
+          </Link> */}
+
+          <Link to={ROUTES.HOUME} className="favourites">
+            <svg className={["icon-search"]}>
+              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#sistrix`} />
+            </svg>
+          </Link>
+
           <Link to={ROUTES.HOUME} className="favourites">
             <svg className={["icon-fav"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
