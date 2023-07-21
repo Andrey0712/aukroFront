@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
 .headerHead {
   position: sticky;
   top: 0;
@@ -87,6 +90,78 @@
 
 @media (max-width: 900px) {
   .formheder {
+    display: none;
+  }
+}
+.formhederMobil {
+  margin: auto;
+  /* display: inline-block; */
+  position: relative;
+  height: 30px;
+  /* float: right;
+  padding: 0; */
+}
+
+.inputMobile input[type="text"] {
+  margin: 60px 90px;
+  margin-top: 60px;
+  /* height: 30px; */
+  font-size: 20px;
+  /* display: inline-block; */
+  font-family: "Lato";
+  font-weight: 50;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 20px;
+  padding-right: 20px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width 0.4s cubic-bezier(0, 0.795, 0, 1);
+  cursor: pointer;
+}
+.inputMobile input[type="text"]:focus:hover {
+  border-bottom: 1px solid #bbb;
+}
+
+.inputMobile input[type="text"]:focus {
+  width: 180px;
+  z-index: 1;
+  border-bottom: 1px solid #bbb;
+  cursor: text;
+}
+.inputMobile input[type="submit"] {
+  margin: 40px 90px;
+  height: 67px;
+  width: 63px;
+  display: inline-block;
+  color: red;
+  float: right;
+  /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABtlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYY/hoAAAAkXRSTlMAAggEC0OFpMGvklsaRLb29dnE0O771m4O7eSDOxYJESxoyfqmGwFs87gwF4qxQuoDBX6EsucyLqxFDbA2OvGMDLPsP0h7+Eb3gsWY5h6H8pua2hWX5SaZ4ikhiDRa3wa00hNM+XUHKunH1CBKYlCoCp2QU+8+GbtOEjUQor7wqTecS33PSZHcRxw94+BNnqAdVfvQcQAAAWFJREFUOMtjYCAeMDIx45FlYWVj5+Dk4ubBoZmXj19AUEhYRFRMXAKLPLO4pJS0jKycvIKikrKKKoa8mrqGppYahK2tI6Ari65AT19T1QCqgMHQSNlYDVVezsTUzNzCEsa1sta3QVVga2fv4OjkDOe7CBijKnB103P38ETwJbyEHFAUePv4+vkjmxog5YuiIDAoOCQUWchbPwxFQXgED5dTJLIC0ygUBdEaMbFxMQh+fEJiEoqC5JTUtPR4BN88IxA1IJIys7KR48WePwctJHPdvFkQvDyR/AI0BQWFokXyULZBsVRJKUZslamklFdUAi2Wq+IqceIPqMRQUe1qmiJcExJYW+dR31CU0tgUg5FizJtrI3xCW0JaCxis2tw82jswU41cp6+vPCOIlSMwcWJcK5702dU9ceLEniY8KnqlgCoikgmp6O6lggo9Qir61AioiMabV/X6oycQyM1qxOR5APoxUUbk4232AAAAAElFTkSuQmCC)
+    center no-repeat; */
+  /* background: rgb(239, 231, 231); */
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+.inputMobile input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 899px) {
+  .formhederMobile {
     display: none;
   }
 }

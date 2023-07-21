@@ -70,6 +70,12 @@ const Header = () => {
           <div className="usernameheder">{values.name}</div>
         </div>
 
+        {/* <div id="wrap">
+  <form action="" autocomplete="on">
+  <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
+  </form>
+</div> */}
+
         <form className="formheder">
           <div className="iconheder">
             <svg className="iconheder">
@@ -86,6 +92,18 @@ const Header = () => {
               value={searchValue}
             />
           </div>
+          {/* <div className="inputMobile">
+            <input
+              id="search"
+              type="text"
+              name="search"
+              placeholder="Search by name..."
+              autoComplete="off"
+              onChange={handleSearch}
+              value={searchValue}
+            />
+            <input id="search_submit" value="Rechercher" type="submit"></input>
+          </div> */}
 
           {searchValue && (
             <div className="boxheder">
@@ -122,7 +140,6 @@ const Header = () => {
           </button>
         </div> */}
 
-        {/* <div className="btn-group" role="group" aria-label="Theme toggle"> */}
         {theme === "light" ? (
           <button className="buttonTheme" onClick={handleDarkThemeClick}>
             Dark
@@ -132,26 +149,59 @@ const Header = () => {
             Light
           </button>
         )}
-        {/* </div> */}
 
         <div className="account">
-          {/* <div>
-            <a className="favourites">
-              <FontAwesomeIcon icon="fa-brands fa-sistrix" fade size="sm" />
-            </a>
-          </div> */}
-
-          {/* <Link to={ROUTES.HOUME} className="favourites">
-            <svg className={["icon-fav"]}>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sistrix.svg`} />
-            </svg>
-          </Link> */}
-
-          <Link to={ROUTES.HOUME} className="favourites">
+          <form className="formhederMobile">
             <svg className={["icon-search"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#sistrix`} />
             </svg>
-          </Link>
+            <div className="inputMobile">
+              <input
+                // id="search"
+                type="text"
+                name="search"
+                placeholder="Search by name..."
+                autoComplete="off"
+                onChange={handleSearch}
+                value={searchValue}
+              />
+              <input
+                id="search_submit"
+                value="Rechercher"
+                type="submit"
+              ></input>
+            </div>
+
+            {searchValue && (
+              <div className="boxheder">
+                {isLoading
+                  ? "Loading"
+                  : !data.length
+                  ? "No results"
+                  : data.map(({ title, images, id }) => {
+                      return (
+                        <Link
+                          key={id}
+                          onClick={() => setSearchValue("")}
+                          className="itemheder"
+                          to={`/products/${id}`}
+                        >
+                          <div
+                            className="imageheder"
+                            style={{ backgroundImage: `url(${images[0]})` }}
+                          />
+                          <div className="titleheder">{title}</div>
+                        </Link>
+                      );
+                    })}
+              </div>
+            )}
+          </form>
+          {/* <Link to={ROUTES.HOUME} className="favourites">
+            <svg className={["icon-search"]}>
+              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#sistrix`} />
+            </svg>
+          </Link> */}
 
           <Link to={ROUTES.HOUME} className="favourites">
             <svg className={["icon-fav"]}>
