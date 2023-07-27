@@ -1,5 +1,6 @@
 .productPr {
   display: flex;
+  position: relative;
   flex-grow: 1;
   max-width: calc(100% - 324px);
   padding: 24px;
@@ -142,4 +143,48 @@
 .addPr:disabled {
   cursor: not-allowed;
   background: var(--bg);
+}
+
+@media (max-width: 835px) {
+  /* .productPr {
+    display: flex;
+    flex-grow: 1;
+    max-width: auto;
+    padding: 24px;
+    column-gap: 32px;
+    color: var(--light);
+  } */
+  .currentPr {
+    width: 250px;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* .currentPr {
+    width: 250px;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+  } */
+  .actionsPr {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .bottomPr {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--dark-sea);
+    margin-top: auto;
+  }
 }

@@ -91,3 +91,22 @@
   margin-top: 24px;
   text-align: center;
 }
+@media (max-width: 700px) {
+  .listPR {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    /* gap: 20px; */
+    /* flex-wrap: wrap; */
+  }
+  .productPR {
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .productPR:nth-child(5n) {
+    width: 100%;
+  }
+}
