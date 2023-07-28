@@ -4,6 +4,7 @@ import Products from "../Products/Products";
 import { useDispatch, useSelector } from "react-redux";
 import Categories from "../Categories/Categories";
 import { filterByPrice } from "../../features/products/productsSlice";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Houme = () => {
   const filterPrice = 100;
@@ -21,9 +22,11 @@ const Houme = () => {
   return (
     <>
       <Poster />
-
+      <Sidebar />
       <Products products={list} amount={5} title="Лоти" />
+
       <Categories categories={categories.list} amount={5} title="Категорії" />
+
       <Products products={filtered} amount={20} title={filterPricestring} />
     </>
   );

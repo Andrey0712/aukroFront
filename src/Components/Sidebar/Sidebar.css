@@ -11,9 +11,24 @@
     display: none;
   }
 }
+@media (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    flex-grow: 1;
+    width: auto;
+    padding: 24px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* overflow-y: scroll; */
+  }
+}
 
 .title {
-  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
   line-height: 20px;
   font-size: 30px;
   color: var(--dark-sea);
@@ -25,7 +40,7 @@
   flex-direction: column;
   row-gap: 12px;
   overflow-y: hidden;
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 .menuScr {
   margin-top: 32px;
@@ -53,5 +68,8 @@
 .footer {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  /* flex-direction: column;
+  justify-content: end; */
+  /* row-gap: 10px; */
+  justify-content: space-around;
 }

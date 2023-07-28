@@ -1,4 +1,6 @@
 .sectionCategories {
+  /* display: flex;
+  flex-grow: 1; */
   width: 100%;
   padding: 22px;
   overflow-x: auto;
@@ -11,6 +13,8 @@
 }
 
 .itemCategories {
+  /* position: relative;
+  flex-grow: 1; */
   width: calc(100% / 5);
   overflow: hidden;
   text-align: center;
@@ -18,10 +22,11 @@
 
 .imageCategories {
   width: 100%;
-  height: 230px;
+  height: 130px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 7%;
 }
 
 .titleCategories {
@@ -32,6 +37,7 @@
 }
 
 .wrapperCategories {
+  /* position: relative; */
   width: 100%;
   padding: 24px;
   flex-grow: 1;
@@ -83,3 +89,51 @@
   gap: 20px;
   margin-top: 24px;
 }
+
+@media (max-width: 701px) {
+  .sectionCategories {
+    display: none;
+  }
+}
+@media (max-width: 870px) {
+  .filtersCategories {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end;
+    gap: 20px;
+    width: 100%;
+    margin-top: 24px; */
+  }
+}
+.slider {
+  margin: 0 20px;
+  overflow: "hidden";
+  padding: 2rem 0;
+}
+.react-multi-carousel-list {
+  padding: 1rem 0 2rem 0;
+}
+
+.custom-dot-list-style button {
+  border: none;
+  background: rgb(255, 68, 68);
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  background: rgb(255, 68, 68) !important;
+}
+
+/* .BrandslogoSec {
+  background: #f6f6f6;
+}
+.BrandslogoSec .react-multiple-carousel__arrow--left {
+  left: calc(1% + 1px);
+}
+.BrandslogoSec .react-multiple-carousel__arrow--right {
+  right: calc(0% + 1px);
+}
+.BrandslogoSec .react-multiple-carousel__arrow {
+  background: none !important;
+}
+.BrandslogoSec .react-multiple-carousel__arrow::before {
+  color: rgb(161, 157, 157);
+} */

@@ -1,12 +1,11 @@
 //import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// import "./Sidebar.css";
 import "./Sidebar.css";
 import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const { list } = useSelector(({ categories }) => categories);
-  console.log("list", list);
+  //console.log("list", list);
 
   // const [values, setValues] = useState();
   // const lenght = true;
