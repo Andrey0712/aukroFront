@@ -13,15 +13,17 @@
 }
 
 .itemCategories {
-  /* position: relative;
-  flex-grow: 1; */
+  position: relative;
+  flex-grow: 1;
   width: calc(100% / 5);
+  /* width: 200px; */
   overflow: hidden;
   text-align: center;
 }
 
 .imageCategories {
-  width: 100%;
+  /* width: 100%; */
+  /* width: 100px; */
   height: 130px;
   background-position: center;
   background-repeat: no-repeat;

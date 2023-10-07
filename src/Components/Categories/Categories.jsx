@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Carousel from "@brainhubeu/react-carousel";
-import Icon from "react-fa";
-import "@brainhubeu/react-carousel/lib/style.css";
+// import Carousel from "@brainhubeu/react-carousel";
+// import Icon from "react-fa";
+// import "@brainhubeu/react-carousel/lib/style.css";
 
 // import Carousel from "react-multi-carousel";
 // import "react-multi-carousel/lib/styles.css";
-// import "./Categories.css";
+
+import "./Categories.css";
 
 const Categories = ({ title, categories = [], amount }) => {
   const list = categories.filter((_, i) => i < amount);
-  // console.log(amount);
+  console.log(list);
 
   // const categoriesResponsiv = {
   //   desktop: {
@@ -50,6 +51,9 @@ const Categories = ({ title, categories = [], amount }) => {
           infinite={true}
           partialVisible={false}
           dotListClass="custom-dot-list-style"
+          // arrowLeft={<Icon className="icon-example" name="arrow-left" />}
+          // arrowRight={<Icon className="icon-example" name="arrow-right" />}
+          // addArrowClickHandler
         > */}
         {list.map(({ id, name, image }) => (
           <Link to={`/categories/${id}`} key={id} className="itemCategories">

@@ -21,13 +21,12 @@ const Houme = () => {
   }, [dispatch, list.length]);
   return (
     <>
-      <Poster />
+      {/* {" "} */}
       <Sidebar />
+      <Poster />
       <Products products={list} amount={5} title="Лоти" />
-
       <Categories categories={categories.list} amount={5} title="Категорії" />
-
-      <Products products={filtered} amount={20} title={filterPricestring} />
+      <Products products={filtered} amount={10} title={filterPricestring} />
     </>
   );
 };
